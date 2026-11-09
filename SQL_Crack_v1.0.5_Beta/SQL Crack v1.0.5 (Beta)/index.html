@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070a14">
+<title>SQL Crack — v1.0.5 (Beta)</title>
+<link rel="icon" type="image/png" href="assets/sql-crack-logo.png">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="screen-noise" aria-hidden="true"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo-block">
+      <img src="assets/sql-crack-logo.png" alt="SQL Crack uygulama logosu" class="app-logo">
+      <div><div class="logo-title">SQL<span>CRACK</span></div><div class="logo-version">v1.0.5 (Beta) <span>• TarikPro43391</span></div></div>
+    </div>
+    <div class="side-caption">KONTROL MERKEZİ</div>
+    <nav aria-label="Bölümler">
+      <a href="#dashboard" class="nav-link active"><span class="nav-icon">⌁</span> Kontrol Paneli <span class="nav-arrow">›</span></a>
+      <a href="#simulator" class="nav-link"><span class="nav-icon">◇</span> Test Laboratuvarı</a>
+      <a href="#safeProbe" class="nav-link"><span class="nav-icon">⊞</span> İzinli HTTP Kontrolü</a>
+      <a href="#monitor" class="nav-link"><span class="nav-icon">◉</span> Sağlık Monitörü</a>
+      <a href="#reports" class="nav-link"><span class="nav-icon">▤</span> Gelişmiş Raporlar</a>
+      <a href="#safety" class="nav-link"><span class="nav-icon">⬡</span> Akıllı Güvenlik</a>
+      <a href="#logs" class="nav-link"><span class="nav-icon">≡</span> Olay Günlükleri</a>
+      <a href="#dumps" class="nav-link"><span class="nav-icon">▣</span> Demo Dump Arşivi</a>
+      <a href="#updates" class="nav-link"><span class="nav-icon">✦</span> v1.0.5 (Beta) Yenilikleri</a>
+      <a href="#features" class="nav-link"><span class="nav-icon">✧</span> 32 Özellik</a>
+    </nav>
+    <div class="side-bottom">
+      <div class="guard"><span class="guard-dot"></span><div><strong>GÜVENLİ LABORATUVAR</strong><small>İzinli kontrol • Sentetik veriler</small></div></div>
+      <div class="copy">© SQL Crack <span>v1.0.5 (Beta)</span><br>Developed by <b>TarikPro43391</b></div>
+    </div>
+  </aside>
+  <div class="main-area">
+    <header class="topbar">
+      <div class="breadcrumb"><span>SECURITY WORKSPACE</span><span class="slash">/</span><b>Dashboard</b></div>
+      <div class="top-right"><span id="clock">--:--:--</span><span class="connection"><span class="conn-dot" id="connDot"></span><span id="connectionText">BAĞLANIYOR</span></span><span class="header-version">v1.0.5 (Beta)</span></div>
+    </header>
+    <main id="dashboard">
+      <section class="hero">
+        <div class="hero-text"><div class="eyebrow"><span class="eyebrow-line"></span> SIMULATION ENVIRONMENT · TERMINAL 01</div>
+          <h1>SQL <span>Crack</span> <span class="h1outline">Control Center</span></h1>
+          <p>Güvenlik senaryolarını güvenli bir ortamda simüle et, sonuçları izle ve raporlarını düzenle. Simülasyonlar gerçek hedefe istek göndermez; ayrı HTTP kontrolü yalnızca onaylı kapsamda zararsız GET istekleri kullanır.</p>
+          <div class="hero-actions"><a href="#simulator" class="btn btn-primary">▶ TEST LABORATUVARINA GİT</a><a href="#logs" class="btn btn-ghost">GÜNLÜKLERİ GÖR <span>↗</span></a></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="orb"></div><div class="orb-ring"></div><div class="orb-ring second"></div><div class="glyph">{ SQL }</div><div class="orbit-label">SECURE / OFFLINE</div></div>
+      </section>
+      <section class="metric-grid" aria-label="Sistem metrikleri">
+        <article class="metric"><div class="metric-top"><span>TOPLAM OLAY</span><span class="metric-icon aqua">▤</span></div><strong id="metricTotal">0</strong><small>Kayıtlı test senaryosu</small></article>
+        <article class="metric"><div class="metric-top"><span>UYARI SAYISI</span><span class="metric-icon pink">!</span></div><strong id="metricWarn">0</strong><small>Simülasyon uyarıları</small></article>
+        <article class="metric"><div class="metric-top"><span>DEMO DUMP</span><span class="metric-icon purple">▣</span></div><strong id="metricDumps">0</strong><small>Kaydedilen örnek dosya</small></article>
+        <article class="metric"><div class="metric-top"><span>SİSTEM DURUMU</span><span class="metric-icon green">●</span></div><strong class="system-label" id="metricStatus">KONTROL</strong><small>Yerel sunucu bağlantısı</small></article>
+      </section>
+      <section class="work-grid" id="simulator">
+        <article class="panel sim-panel">
+          <div class="panel-heading"><div><div class="section-kicker">01 / OPERATIONS</div><h2>Test Laboratuvarı</h2></div><span class="panel-tag">SIMULATION ONLY</span></div>
+          <div class="field"><label for="target">DEMO HEDEFİ</label><select id="target"><option value="demo-app">demo-app / Web uygulaması</option><option value="training-box">training-box / Eğitim kutusu</option><option value="login-mock">login-mock / Örnek giriş</option><option value="catalog-mock">catalog-mock / Demo katalog</option></select></div>
+          <div class="field"><label for="scenario">TEST SENARYOSU</label><select id="scenario"><option value="baseline">Temel güvenlik kontrolü</option><option value="quote">Tırnak karakteri kontrolü</option><option value="union">UNION ifadesi kontrolü</option><option value="timing">Zaman tabanlı kontrol</option><option value="error">Hata yönetimi kontrolü</option><option value="dump">Sahte SQL dump oluşturma</option></select></div>
+          <div class="field"><label for="inputText">YEREL ANALİZ METNİ <span>(İSTEĞE BAĞLI)</span></label><textarea id="inputText" maxlength="200" rows="2" spellcheck="false" placeholder="Test metni girilebilir, SQL çalıştırılmaz..."></textarea><div class="field-foot"><span>Metin diske kaydedilmez</span><span><span id="chars">0</span>/200</span></div></div>
+          <div class="safety-note"><span>ⓘ</span><div><strong>Korunan simülasyon ortamı</strong><p>Bu simülasyon bölümü herhangi bir siteyi taramaz; yalnızca eğitim amaçlı örnek sonuç üretir.</p></div></div>
+          <div class="run-row"><button id="runBtn" class="btn btn-primary full" type="button"><span id="runText">▶ SİMÜLASYONU BAŞLAT</span><span class="shortcut">Ctrl + Enter</span></button></div>
+          <div class="release-actions"><button type="button" id="rerunBtn" class="btn btn-outline" disabled>↻ SON TESTİ TEKRARLA</button><span id="replayHint">Önce bir test çalıştır</span></div>
+        </article>
+        <article class="panel terminal-panel">
+          <div class="panel-heading"><div><div class="section-kicker">02 / LIVE FEED</div><h2>Canlı Terminal</h2></div><span class="live"><span></span> LIVE</span></div>
+          <div class="terminal-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>sql-crack / console</span><button id="exportTerminal" type="button">↓ TXT</button><button id="clearConsole" type="button">TEMİZLE</button></div>
+          <div class="terminal-screen" id="terminal" role="log" aria-live="polite"><div class="term-line"><span class="term-stamp">[SYSTEM]</span> SQL Crack v1.0.5 (Beta) başlatıldı.</div><div class="term-line"><span class="term-stamp">[SAFE]</span> Güvenli simülasyon modu hazır.</div><div class="term-line muted">&gt; Komut bekleniyor<span class="cursor">_</span></div></div>
+          <div class="terminal-foot"><span><span class="tiny-circle"></span> CONNECTED TO LOCAL LAB</span><span id="lastRun">SON TEST: —</span></div>
+        </article>
+      </section>
+      
+      <section class="panel probe-panel" id="safeProbe">
+        <div class="panel-heading"><div><div class="section-kicker">03 / CONTROLLED HTTP</div><h2>İzinli HTTP Kontrolü</h2></div><span class="panel-tag">BENIGN PARAMS ONLY</span></div>
+        <p class="archive-desc">İzin verdiğin belirli bir URL’ye, 1–3 adet zararsız ve rastgele parametreli GET isteği gönderir. SQL enjeksiyonu, WAF atlatma veya veri toplama yapmaz. Dış adresler için <code>scope.json</code> içinde tam URL izni gerekir.</p>
+        <div class="probe-form">
+          <div class="field"><label for="probeUrl">İZİNLİ URL</label><input id="probeUrl" type="url" spellcheck="false" autocomplete="off" placeholder="http://127.0.0.1:8000/api/health" maxlength="350"></div>
+          <div class="field"><label for="probeCount">İSTEK SAYISI</label><select id="probeCount"><option value="1">1 istek</option><option value="2">2 istek</option><option value="3">3 istek</option></select></div>
+        </div>
+        <label class="probe-confirm"><input type="checkbox" id="probeConfirm"> Bu hedef üzerinde test yapma iznim var; sonuçların SQL açığı tespiti anlamına gelmediğini biliyorum.</label>
+        <button id="probeBtn" class="btn btn-primary" type="button">▶ GÜVENLİ HTTP KONTROLÜ BAŞLAT</button>
+        <div class="probe-results" id="probeResults" aria-live="polite">Henüz kontrol çalıştırılmadı.</div>
+      </section>
+
+      <!-- v1.0.5 (Beta): Exactly three new read-only observability features -->
+      <section class="insight-grid" aria-label="Eklenen üç güvenli analiz özelliği">
+        <article class="panel insight-panel" id="monitor">
+          <div class="panel-heading"><div><div class="section-kicker">NEW / 01 · SYSTEM</div><h2>Sunucu Sağlık Monitörü</h2></div><span class="panel-tag" id="monitorHealth">ÖLÇÜLÜYOR</span></div>
+          <p class="archive-desc">Yalnızca yerel sunucunun gerçek yanıt sürelerini ve çalışma süresini görüntüler. Yeni dış bağlantı oluşturmaz.</p>
+          <div class="insight-metrics">
+            <div class="insight-stat"><small>ÇALIŞMA SÜRESİ</small><strong id="monitorUptime">—</strong></div>
+            <div class="insight-stat"><small>YANIT SAYISI</small><strong id="monitorRequests">—</strong></div>
+            <div class="insight-stat"><small>ORT. YEREL YANIT</small><strong id="monitorLatency">—</strong></div>
+            <div class="insight-stat"><small>SON 200 / SUNUCU HATASI</small><strong id="monitorErrors">—</strong></div>
+          </div>
+        </article>
+        <article class="panel insight-panel" id="reports">
+          <div class="panel-heading"><div><div class="section-kicker">NEW / 02 · ANALYTICS</div><h2>Gelişmiş Test Raporları</h2></div><span class="panel-tag">24H VS 24H</span></div>
+          <p class="archive-desc">Bugünün son 24 saatlik olaylarını bir önceki 24 saatle karşılaştırır; izinli HTTP kontrol istatistiklerini de özetler.</p>
+          <div class="insight-metrics">
+            <div class="insight-stat"><small>SON 24 SAAT</small><strong id="reportCurrent">—</strong></div>
+            <div class="insight-stat"><small>ÖNCEKİ 24 SAAT</small><strong id="reportPrevious">—</strong></div>
+            <div class="insight-stat"><small>OLAY FARKI</small><strong id="reportDelta">—</strong></div>
+            <div class="insight-stat"><small>HTTP BAŞARI ORANI</small><strong id="reportCheckSuccess">—</strong></div>
+          </div>
+          <p class="insight-foot" id="reportDetail">Veriler yükleniyor…</p>
+          <div class="scenario-summary" id="reportTop">Henüz özet bulunmuyor.</div>
+        </article>
+        <article class="panel insight-panel" id="safety">
+          <div class="panel-heading"><div><div class="section-kicker">NEW / 03 · GUARD</div><h2>Akıllı Güvenlik Kontrolü</h2></div><span class="panel-tag" id="safetyStatus">KONTROL</span></div>
+          <p class="archive-desc">Kapsam reddi, istek kotası ve art arda başarısız bağlantılar konusunda uyarır. Onay mekanizmasını devre dışı bırakmaz.</p>
+          <div class="insight-metrics">
+            <div class="insight-stat"><small>İZİNLİ ADRES SAYISI</small><strong id="safetyApproved">—</strong></div>
+            <div class="insight-stat"><small>SON 60 DK ENGEL</small><strong id="safetyBlocked">—</strong></div>
+            <div class="insight-stat"><small>KALAN İSTEK / DAK</small><strong id="safetyRemaining">—</strong></div>
+            <div class="insight-stat"><small>ARDIŞIK BAŞARISIZ</small><strong id="safetyFailures">—</strong></div>
+          </div>
+          <div class="safety-alerts" id="safetyAlerts" aria-live="polite">Güvenlik kontrolü yükleniyor…</div>
+        </article>
+      </section>
+      <section class="lower-grid">
+        <article class="panel chart-panel"><div class="panel-heading"><div><div class="section-kicker">03 / ACTIVITY</div><h2>Test Aktivitesi</h2></div><span class="range-tag">SON 7 GÜN</span></div><div id="chart" class="chart" aria-label="Son yedi gün günlük test sayıları"></div></article>
+        <article class="panel quick-panel"><div class="panel-heading"><div><div class="section-kicker">04 / INFO</div><h2>Laboratuvar Durumu</h2></div></div>
+          <div class="info-line"><span>Ağ erişimi</span><b class="positive">YALNIZCA İZİNLİ KAPSAM</b></div><div class="info-line"><span>Günlük depolama</span><b>data/events.jsonl</b></div><div class="info-line"><span>Demo dosyaları</span><b>data/dumps/</b></div><div class="info-line"><span>Test modu</span><b class="positive">EĞİTİM + GÜVENLİ GET</b></div><div class="info-line"><span>Güncelleme</span><b class="positive">v1.0.5 (Beta) • İZİNLİ HTTP KONTROLÜ</b></div><div class="info-line"><span>Yapımcı</span><b>TarikPro43391</b></div>
+        </article>
+      </section>
+      <section class="panel records-panel" id="logs">
+        <div class="panel-heading records-heading"><div><div class="section-kicker">05 / AUDIT TRAIL</div><h2>Olay Günlükleri <span id="visibleCount" class="counter">0</span></h2></div><div class="button-stack"><label class="refresh-toggle"><input id="autoRefresh" type="checkbox" checked> OTOMATİK YENİLE</label><button id="exportJson" class="btn btn-outline" type="button">↓ JSON</button><button id="exportCsv" class="btn btn-outline" type="button">↓ CSV</button><button id="clearLogs" class="btn btn-danger" type="button">✕ TEMİZLE</button></div></div>
+        <div class="filters"><label class="search-wrap"><span>⌕</span><input id="searchLogs" type="search" placeholder="Günlüklerde ara... (/)" aria-label="Günlüklerde ara"></label><select id="filterLevel" aria-label="Seviye filtresi"><option value="ALL">Tüm seviyeler</option><option value="INFO">Bilgi</option><option value="WARNING">Uyarılar</option></select><select id="filterDate" aria-label="Tarih filtresi"><option value="all">Tüm tarihler</option><option value="today">Bugün</option><option value="week">Son 7 gün</option></select></div>
+        <div class="table-scroller"><table><thead><tr><th>ZAMAN</th><th>DEMO HEDEFİ</th><th>SENARYO</th><th>SEVİYE</th><th>SONUÇ</th></tr></thead><tbody id="logBody"></tbody></table></div><div class="table-footer"><span id="pageInfo">0 kayıt</span><div><button type="button" id="prevPage" class="page-btn">‹</button><span id="pageNumber">1 / 1</span><button type="button" id="nextPage" class="page-btn">›</button></div></div>
+      </section>
+      <section class="panel records-panel" id="dumps"><div class="panel-heading records-heading"><div><div class="section-kicker">06 / ARCHIVE</div><h2>Demo Dump Arşivi <span id="dumpCount" class="counter">0</span></h2></div><span class="panel-tag">SYNTHETIC DATA ONLY</span></div>
+        <p class="archive-desc">Buradaki .sql dosyaları sadece sahte eğitim verisi içerir. Gerçek bir veritabanından içerik alınmaz.</p><div id="dumpList" class="dump-list"></div>
+      </section>
+      <section class="panel update-panel" id="updates"><div class="panel-heading"><div><div class="section-kicker">08 / RELEASE NOTES</div><h2>v1.0.5 (Beta) Yenilikleri</h2></div><span class="panel-tag">SAFE TEST UPDATE</span></div><div class="updates-grid"><span>✦ İzinli HTTP güvenlik kontrolü</span><span>✦ Rastgele zararsız parametre isimleri ve değerleri</span><span>✦ Kesin URL izin listesi (scope.json)</span><span>✦ En fazla 3 istek ve dakikada 6 kontrol sınırı</span><span>✦ Yönlendirmeleri izlememe ve içerik toplamama</span><span>✦ Kalıcı olay kayıtları ve hata kontrolleri</span><span>✦ Sunucu sağlık monitörü</span><span>✦ 24 saatlik karşılaştırmalı test raporları</span><span>✦ Akıllı kapsam, kota ve hata uyarıları</span></div></section><section class="panel features-panel" id="features"><div class="panel-heading"><div><div class="section-kicker">07 / CAPABILITIES</div><h2>32 Özellik</h2></div><span class="panel-tag">v1.0.5 (Beta)</span></div><div id="featureGrid" class="features-grid"></div></section>
+      <footer class="footer"><span>SQL CRACK · <b>v1.0.5 (Beta)</b></span><span>DESIGNED BY <b>TarikPro43391</b></span><span>AUTHORIZED SAFE CHECKS · NO SQL ATTACKS</span></footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>
